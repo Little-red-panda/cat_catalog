@@ -1,0 +1,99 @@
+/* montserrat-regular - cyrillic */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/montserrat-v15-cyrillic-regular.eot'); /* IE9 Compat Modes */
+    src: local('Montserrat Regular'), local('Montserrat-Regular'),
+         url('../fonts/montserrat-v15-cyrillic-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/montserrat-v15-cyrillic-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/montserrat-v15-cyrillic-regular.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/montserrat-v15-cyrillic-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/montserrat-v15-cyrillic-regular.svg#Montserrat') format('svg'); /* Legacy iOS */
+  }
+/* montserrat-700 - cyrillic */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/montserrat-v15-cyrillic-700.eot'); /* IE9 Compat Modes */
+    src: local('Montserrat Bold'), local('Montserrat-Bold'),
+         url('../fonts/montserrat-v15-cyrillic-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/montserrat-v15-cyrillic-700.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/montserrat-v15-cyrillic-700.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/montserrat-v15-cyrillic-700.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/montserrat-v15-cyrillic-700.svg#Montserrat') format('svg'); /* Legacy iOS */
+}
+
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    @include indents();
+    position: relative;
+    width: 1280px;
+    padding: 0 50px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    white-space: nowrap;
+
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+// .container {
+//     position: relative;
+//     padding-right: 30px;
+//     padding-left: 30px;
+//     margin: 0 auto;
+// }
+
+
+@media (min-width: $tablet-width) {
+    // .container {
+    //     width: 668px;
+    //     padding-right: 50px;
+    //     padding-left: 50px;
+    // }
+
+}
+
+@media (min-width: $desktop-width) {
+    // .container {
+    //     width: 1050px;
+    //     padding-right: 0px;
+    //     padding-left: 0px;
+    // }
+}
+

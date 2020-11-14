@@ -1,0 +1,41 @@
+.main-nav__list {
+    @include indents();
+
+    display: flex;
+    list-style: none;
+
+    padding-left: 170px;
+}
+
+.main-nav__link {
+    padding-left: 30px;
+    @include font(18px, 60px, 400);
+    display: block;
+    height: 60px;
+    color: #fff;
+    margin-top: 25px;
+
+    transition: 0.1s;
+    &--main {
+        width: 117px;
+    }
+    &--gallery {
+        width: 121px;
+    }
+    &--news {
+        width: 105px;
+    }
+    &--profile {
+        width: 125px;
+    }
+    &:hover,
+    &:focus {
+        cursor: pointer;
+        opacity: 0.6;
+        transform: scale(1.1, 1.2);
+        outline: none;
+    }
+    &:active {
+        opacity: 0.3;
+    } 
+}

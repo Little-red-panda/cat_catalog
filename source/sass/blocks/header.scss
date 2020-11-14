@@ -1,0 +1,74 @@
+.main-header {
+    width: 100%;
+}
+
+.wrapper {
+    width: 1280px;
+    height: 252px;
+    background-image:url("../img/mask.png"), url("../img/header.jpg");
+    background-position: center;   
+    margin: 0 auto;
+}
+
+.main-header__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 1280px;
+    height: 105px;
+    padding: 0 50px;
+    margin: 0 auto;   
+}
+
+.main-header__logo-link {
+    &:hover,
+    &:focus {
+        opacity: 0.6;
+    }
+    &:active {
+        opacity: 0.3;
+    } 
+}
+
+.main-header__logo-1 {
+    position: absolute;
+    top: 40px;
+    transition: 0.2s;
+}
+
+.main-header__logo-2 {
+    position: absolute;
+    top: 40px;
+    left: 64px;
+    transition: 0.2s;
+}
+
+.main-header__logo-link:hover .main-header__logo-1,
+.main-header__logo-link:focus .main-header__logo-1 {
+    transform: translate(-1px, 1px);
+}
+
+.main-header__logo-link:hover .main-header__logo-2,
+.main-header__logo-link:focus .main-header__logo-2 {
+    transform: translate(1px, -1px);
+}
+
+.main-header__wrapper-info {
+    margin-right: 0;
+    margin-left: auto;
+    margin-top: 20px;
+}
+
+.main-header__tel {
+    @include indents();
+    @include font(24px, 29px, 700);
+    color: #fff;
+    margin-bottom: 3px;
+}
+
+.main-header__text {
+    @include indents();
+    @include font(18px, 22px, 400);
+    color: #fff;
+    text-align: end;
+}

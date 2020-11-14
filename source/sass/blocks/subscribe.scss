@@ -1,0 +1,125 @@
+.subscribe {
+    display: flex;
+    justify-content: space-between;
+    height: 312px;
+    background: #1F2021;
+    padding: 0 80px;
+    margin-bottom: 114px;
+}
+
+.subscribe__title {
+    @include indents();
+    @include font(48px, 59px, 700);
+    color: #fff;
+    margin-top: 83px;
+    margin-bottom: 26px;
+}
+
+.subscribe__text {
+    @include indents();
+    @include font(28px, 26px, 400);
+    color: #fff;
+    width: 401px;
+}
+
+.subscribe__form {
+    position: relative;
+    margin-top: 83px;
+}
+
+.subscribe__email {
+    font: inherit;
+    
+    width: 300px;
+    height: 65px;
+    background: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+
+    padding-left: 36px;
+    margin-top: 6px;
+    margin-right: 10px;
+}
+
+.subscribe__email::placeholder {
+    @include font(14px, 17px, 400);
+    color: #000;
+    transition: 0.1s;
+}
+
+.subscribe__email:hover.subscribe__email::placeholder {
+    transform: scale(1.1);
+    padding-left: 10px;
+}
+
+.subscribe__checkbox + label {
+    color: #fff;
+    position: absolute;
+    top: 96px;
+    left: 36px;
+
+    &::before {
+        position: absolute;
+        left: -36px;
+        top: -2px;
+        content: "";
+        width: 18px;
+        height: 18px;
+        background-color: #6EBBD3;
+        border-radius: 3px;
+        
+    } 
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.subscribe__checkbox:checked + label {
+
+    &::after {
+        position: absolute;
+        left: -36px;
+        top: -2px;
+        content: "";
+        width: 18px;
+        height: 18px;
+        background:  #6EBBD3 url("../img/Vector-2.svg") no-repeat center;
+        background-image: url("../img/Vector-2.svg");
+        border-radius: 3px;
+    }
+}
+
+.subscribe__checkbox:hover + label::before,
+.subscribe__checkbox:hover + label::after {
+    cursor: pointer;
+    background-color: #37a3c2;
+}
+
+.subscribe__checkbox:focus + label::before,
+.subscribe__checkbox:focus + label::after {
+    background-color: #37a3c2;
+}
+
+.subscribe__btn {
+    display: inline-block;
+    @include indents();
+    @include font(14px, 65px, 700);
+    color: #fff;
+    width: 250px;
+    height: 65px;
+    background: #6EBBD3;
+    border: none;
+    border-radius: 10px;
+    transform: translateY(-1px);
+    &:hover {
+        cursor: pointer;
+        background-color: #50acc7;
+    }
+    &:active {
+        color: #cecece;
+    }
+    &:focus {
+        background-color: #50acc7;
+        outline: none;
+    }
+}
