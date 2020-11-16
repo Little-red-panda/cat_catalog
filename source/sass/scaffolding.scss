@@ -33,10 +33,12 @@ html {
 }
 
 body {
+    min-width: 320px;
     font-family: 'Montserrat', sans-serif;
 }
 
 img {
+    display: block;
     max-width: 100%;
     height: auto;
 }
@@ -45,7 +47,8 @@ a {
     text-decoration: none;
 }
 
-.container {
+.container,
+.footer-container {
     @include indents();
     position: relative;
     width: 1280px;
@@ -72,28 +75,26 @@ input[type="radio"].visually-hidden {
     overflow: hidden;
 }
 
-// .container {
-//     position: relative;
-//     padding-right: 30px;
-//     padding-left: 30px;
-//     margin: 0 auto;
-// }
-
-
-@media (min-width: $tablet-width) {
-    // .container {
-    //     width: 668px;
-    //     padding-right: 50px;
-    //     padding-left: 50px;
-    // }
+@media (max-width: $tablet-width) {
+    .container,
+    .footer-container {
+        width: 768px;
+        padding-right: 30px;
+        padding-left: 30px;
+    }
 
 }
 
-@media (min-width: $desktop-width) {
-    // .container {
-    //     width: 1050px;
-    //     padding-right: 0px;
-    //     padding-left: 0px;
-    // }
+@media (max-width: $mobile-width) {
+    .container {
+        width: 320px;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .footer-container {
+        @include indents();
+        width: 100%;
+    }
 }
 

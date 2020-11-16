@@ -10,7 +10,6 @@
 
 <body>
     <header class="main-header">
-        <div class="wrapper">
         <div class="main-header__wrapper">
             <a class="main-header__logo-link" href="#">
                 <svg class="main-header__logo-1" width="64" height="52" viewBox="0 0 64 52" fill="none"
@@ -26,7 +25,8 @@
                         fill="white" />
                 </svg>
             </a>
-            <nav class="main-header__main-nav main-nav">
+            <button class="main-nav__toggle main-nav__toggle--opened main-nav__toggle--nojs" type="button"><span class="visually-hidden">Открыть меню</span></button>
+            <nav class="main-header__main-nav main-nav">     
                 <ul class="main-nav__list">
                     <li class="main-nav__item">
                         <a class="main-nav__link main-nav__link--main" href="#">Main</a>
@@ -47,11 +47,9 @@
                 <p class="main-header__text">Звони скорее!</p>
             </div>
         </div>
-    </div>
     </header>
 
-    <main>
-        <div class="container">
+    <main class="container">
             <section class="sort">
 
                 <h2 class="sort__title">Найдено <span class="sort__counter">349</span> котов</h2>
@@ -184,23 +182,23 @@
                 <button class="catalog__btn-more" type="button">Показать еще 20</button>
                 <button class="catalog__btn-scroll" type="button"><span class="visually-hidden">Прокрутка вверх</span></button>
             </section>
-
-            <footer>
-                <section class="subscribe">
-                    <div class="subscribe__wrapper-text">
-                        <h2 class="subscribe__title">Успей купить!</h2>
-                        <p class="subscribe__text">Подпишись и успей словить все акции</p>
-                    </div>
-                    <div class="subscribe__wrapper-form">
-                        <form class="subscribe__form" method="GET" action="https://echo.htmlacademy.ru">
-                            <input class="subscribe__email" type="email" placeholder="Email" required>
-                            <input class="visually-hidden subscribe__checkbox" type="checkbox" name="subscribe" id="subscribe" checked>
-                            <label for="subscribe">Подписаться на новости</label>
-                            <button class="subscribe__btn button" type="submit">Подписаться</button>
-                        </form>
-                    </div>
-                </section>
-            </footer>
-        </div>
     </main>
+
+    <footer class="footer-container">
+        <section class="subscribe">
+            <div class="subscribe__wrapper-text">
+                <h2 class="subscribe__title">Успей купить!</h2>
+                <p class="subscribe__text">Подпишись и успей словить все акции</p>
+            </div>
+            <div class="subscribe__wrapper-form">
+                <form class="subscribe__form" method="GET" action="https://echo.htmlacademy.ru">
+                    <input class="subscribe__email" type="email" placeholder="Email" required>
+                    <input class="visually-hidden subscribe__checkbox" type="checkbox" name="subscribe" id="subscribe"
+                        checked>
+                    <label for="subscribe">Подписаться на новости</label>
+                    <button class="subscribe__btn button" type="submit">Подписаться</button>
+                </form>
+            </div>
+        </section>
+    </footer>
 </body>

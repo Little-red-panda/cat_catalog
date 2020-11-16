@@ -22,6 +22,9 @@
 
 .catalog__link-img {
     position: absolute;
+    &:hover {
+        transform: scale(1.005);
+    }
 
 }
 
@@ -41,8 +44,11 @@
     @include indents();
     @include font(24px, 29px, 700);
     margin-bottom: 22px;
+    transition: 0.1s;
     &:hover {
         opacity: 0.6;
+        transform: scale(1.05);
+        padding-left: 6px;
     }
     &:active {
         opacity: 0.3;
@@ -183,7 +189,7 @@
     position: absolute;
     width: 59px;
     height: 59px;
-    top: 1267px;
+    top: 1225px;
     right: 50px;
     background: url("../img/Vector-1.svg") no-repeat 20.5px 23.5px  #6EBBD3;
     
@@ -199,4 +205,143 @@
         background-color: #50acc7;
         outline: none;
     }  
+}
+
+@media (max-width: $tablet-width) {
+    .catalog__list {    
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 9px;
+        grid-row-gap: 13px;
+    
+        margin-bottom: 48px;
+    }
+    
+    .catalog__link-img {
+        width: 350px;
+    }
+    
+    .catalog__wrapper {
+        padding-top: 263px;
+        padding-left: 23px;
+        width: 350px;
+        height: 426px;
+    }
+
+    .catalog__btn-buy {
+        width: 350px;
+    
+        &--disabled {
+            width: 350px;
+        }
+    }
+
+    .catalog__btn-more {
+        width: 380px;
+        height: 65px;
+
+        margin-bottom: 53px;
+    }
+     
+    .catalog__btn-scroll {
+        width: 59px;
+        height: 59px;
+        top: 1640px;
+        right: 30px;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: $mobile-width) {
+    .catalog__list {
+        display: block;
+        margin-bottom: 40px;
+    }
+
+    .catalog__item {
+        margin-bottom: 12px;
+    }
+
+    .catalog__link-img {
+        width: 280px;
+    
+    }
+
+    .catalog__wrapper {
+        padding-top: 200px;
+        padding-left: 20px;
+        width: 280px;
+        height: 360px;
+    }
+    
+    .catalog__title {
+        @include indents();
+        @include font(20px, 29px, 700);
+        margin-bottom: 0px;
+    }
+    
+    .catalog__wrapper-info {
+        display: block;
+
+        margin-bottom: 15px;
+    
+    }
+    
+    .catalog__color {
+        @include font(12px, 15px, 400);
+        position: relative;
+        padding-left: 0px;
+        margin-bottom: 24px;
+    
+        &::before {
+            width: 2px;
+            height: 240px;
+            top: -96px;
+            left: 120px;
+            transform: rotate(90deg);
+        }
+    }
+    
+    .catalog__age {
+        display: inline-block;
+        width: 120px;
+        padding-right: 25px;
+    }
+    
+    .catalog__paws {
+        display: inline-block;
+        width: 120px;
+        padding-right: 25px;
+    }
+      
+    .catalog__price {
+        @include font(20px, 26px, 700);
+    }
+    
+    .catalog__btn-buy {
+        @include font(16px, 55px, 700);
+        width: 280px;
+        height: 55px;
+    
+        &--disabled {
+            @include font(16px, 55px, 700);
+            width: 280px;
+            height: 55px;
+        }
+    }
+    
+    .catalog__btn-more {
+        @include font(14px, 53px, 400);
+        width: 280px;
+        height: 55px;
+        margin-bottom: 63px;
+    }  
+    
+    .catalog__btn-scroll {
+        width: 49px;
+        height: 49px;
+        top: 1225px;
+        right: 50px;
+        background: url("../img/Vector-1.svg") no-repeat 15px 18px  #6EBBD3;
+    }
+    
 }

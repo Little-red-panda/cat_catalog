@@ -1,0 +1,133 @@
+.main-nav__toggle {
+    display: none;
+}
+.main-nav__list {
+    @include indents();
+
+    display: flex;
+    list-style: none;
+
+    padding-left: 170px;
+}
+
+.main-nav__link {
+    @include font(18px, 60px, 400);
+    padding-left: 30px;
+    display: block;
+    height: 60px;
+    color: #fff;
+
+    transition: 0.1s;
+    &--main {
+        width: 117px;
+    }
+    &--gallery {
+        width: 121px;
+    }
+    &--news {
+        width: 105px;
+    }
+    &--profile {
+        width: 125px;
+    }
+    &:hover,
+    &:focus {
+        cursor: pointer;
+        opacity: 0.6;
+        transform: scale(1.1, 1.2);
+        outline: none;
+    }
+    &:active {
+        opacity: 0.3;
+    } 
+}
+
+@media (max-width: $tablet-width) {
+    .main-nav__list {
+        padding-left: 110px;
+    }
+    .main-nav__link {
+        @include font(18px, 70px, 400);
+        padding-left: 50px;
+        height: 70px;
+        margin-right: 24px;
+
+        &--main {
+            width: 140px;
+        }
+        &--gallery {
+            width: 145px;
+        }
+        &--news {
+            width: 130px;
+        }
+        &--profile {
+            width: 130px;
+            margin-right: 0px;
+        }
+    }
+}
+
+@media (max-width: $mobile-width) {
+    .main-nav--closed {
+        display: none;
+    }
+
+    .main-nav__toggle {
+        display: block;
+        position: absolute;
+        top: 34px;
+        left: 40px;
+        border: none;
+        background-color: transparent;      
+    }
+    
+    .main-nav__toggle--nojs {
+        display: none;
+    }
+    
+    .main-nav__toggle--closed.main-nav__toggle::before {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 2px;
+        background-color: #fff;
+        box-shadow: 0 -7px #fff, 0 -14px #fff;
+    }
+    
+    .main-nav__toggle--opened.main-nav__toggle {
+        &::before,
+        &::after {
+        content: "";
+        position: absolute;
+        left: 6px;
+        top: -6px;
+        width: 30px;
+        height: 2px;
+        background-color: #fff;
+        }
+    
+        &::before {
+            transform: rotate(45deg);
+            box-shadow: none;
+        }
+        &::after {
+            transform: rotate(-45deg);
+        }
+    }
+
+    .main-nav__list {
+        @include indents();
+        display: block;
+        background-color: #1F2021;
+    }
+    .main-nav__link {
+        @include indents();
+        @include font(18px, 50px, 400);
+        width: 100%;
+        height: 50px;
+        border-top: 1px solid #303031;
+        border-bottom: 1px solid #141414;
+        text-align: center;
+    }
+}

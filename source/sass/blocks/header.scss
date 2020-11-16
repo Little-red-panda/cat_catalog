@@ -1,8 +1,4 @@
 .main-header {
-    width: 100%;
-}
-
-.wrapper {
     width: 1280px;
     height: 252px;
     background-image:url("../img/mask.png"), url("../img/header.jpg");
@@ -53,6 +49,10 @@
     transform: translate(1px, -1px);
 }
 
+.main-header__main-nav {
+    margin-top: 25px;
+}
+
 .main-header__wrapper-info {
     margin-right: 0;
     margin-left: auto;
@@ -71,4 +71,105 @@
     @include font(18px, 22px, 400);
     color: #fff;
     text-align: end;
+}
+
+@media (max-width: $tablet-width) {
+    .main-header {
+        width: 100%;
+        height: 200px;
+        background-position: center -52px; 
+    }
+    
+    .main-header__wrapper {
+        flex-wrap: wrap;
+        width: 768px;
+        padding: 0 30px; 
+    }
+
+    .main-header__logo-1 {
+        top: 40px;
+    }
+    
+    .main-header__logo-2 {
+        top: 40px;
+        left: 44px;
+    }
+
+    .main-header__main-nav {
+        margin-top: 30px;
+    }
+
+    .main-header__wrapper-info {
+        display: flex;
+        flex-direction: column-reverse;
+        margin-top: 10px;
+    }
+
+    .main-header__text {
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: $mobile-width) {
+    .main-header {
+        height: auto;
+        background: none;
+        background-color: #000;
+        margin-bottom: 20px;
+    }
+    
+    .main-header__wrapper {
+        @include indents();
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .main-header__logo-link {
+        position: static;
+        display: block;
+        width: 65px;
+        padding-top: 3px;
+        margin: 0 auto;
+
+    }
+
+    .main-header__logo-1 {
+        position: static;
+        width: 50px;
+
+    }
+    
+    .main-header__logo-2 {
+        width: 50px;
+        top: auto;
+        left: auto;
+        transform: translateX(-39px);
+    }
+
+    .main-header__main-nav {
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+
+    .main-header__wrapper-info {
+        @include indents();
+        display: block;  
+    }
+
+    .main-header__tel {
+        @include indents();
+        @include font(18px, 22px, 700);
+        width: 100%;
+        text-align: center;
+        margin-bottom: 3px;
+    }
+    
+    .main-header__text {
+        display: block;
+        @include indents();
+        @include font(16px, 20px, 400);
+        text-align: center;
+        padding-bottom: 10px;
+    }
 }

@@ -2,7 +2,7 @@
     @include indents();
     @include font(38px, 46px, 700);
     position: absolute;
-    top: -110px;
+    top: -147px;
     left: 50px;
     color: #fff;
 }
@@ -10,7 +10,7 @@
 .sort__wrapper {
     @include indents();
     display: flex;
-    padding-top: 37px;
+    margin-top: 37px;
     margin-bottom: 36px;
 }
 
@@ -56,5 +56,80 @@
     &:focus {
     cursor: pointer;
     opacity: 0.6;
+    }
+}
+
+@media (max-width: $tablet-width) {
+    .sort__title {
+        @include font(24px, 29px, 700);
+        top: -85px;
+        left: 30px;
+    }
+
+    .sort__wrapper {
+        @include indents();
+        display: flex;
+        margin-top: 27px;
+        margin-bottom: 36px;
+    }
+
+    .sort__button {
+        width: 40px;
+        height: 40px;
+        border: none;
+        background: transparent url("../img/Vector.svg") no-repeat center;
+    
+        &--price {
+            top: -8px;
+            left: 52px;
+        }
+    
+        &--age {
+            top: -8px;
+            left: 98px;
+        }
+    }
+}
+
+@media (max-width: $mobile-width) {
+    .sort__title {
+        @include indents();
+        @include font(20px, 28px, 700);
+        position: static;
+        color: #000;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .sort__wrapper {
+        @include indents();
+        display: block;
+    }
+
+    .sort__select {
+        @include font(16px, 22px, 700);
+        margin-bottom: 8px;
+    }
+
+
+    .sort__item {
+        @include font(16px, 22px, 400);
+        width: 140px;
+        margin-bottom: 20px;
+    }
+    
+    .sort__button {
+        width: 40px;
+        height: 40px;
+    
+        &--price {
+            top: -9px;
+            left: 50px;
+        }
+    
+        &--age {
+            top: -9px;
+            left: 88px;
+        }
     }
 }
