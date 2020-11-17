@@ -20,6 +20,7 @@
     &:hover,
     &:focus {
         opacity: 0.6;
+        outline: none;
     }
     &:active {
         opacity: 0.3;
@@ -62,8 +63,17 @@
 .main-header__tel {
     @include indents();
     @include font(24px, 29px, 700);
+    display: block;
     color: #fff;
     margin-bottom: 3px;
+    &:hover,
+    &:focus {
+        opacity: 0.6;
+        outline: none;
+    }
+    &:active {
+        opacity: 0.3;
+    } 
 }
 
 .main-header__text {
@@ -93,6 +103,16 @@
     .main-header__logo-2 {
         top: 40px;
         left: 44px;
+    }
+
+    .main-header__logo-link:hover .main-header__logo-1,
+    .main-header__logo-link:focus .main-header__logo-1 {
+        transform: none;
+    }
+
+    .main-header__logo-link:hover .main-header__logo-2,
+    .main-header__logo-link:focus .main-header__logo-2 {
+        transform: none;
     }
 
     .main-header__main-nav {
@@ -131,7 +151,6 @@
         width: 65px;
         padding-top: 3px;
         margin: 0 auto;
-
     }
 
     .main-header__logo-1 {
@@ -144,6 +163,11 @@
         width: 50px;
         top: auto;
         left: auto;
+        transform: translateX(-39px);
+    }
+
+    .main-header__logo-link:hover .main-header__logo-2,
+    .main-header__logo-link:focus .main-header__logo-2 {      
         transform: translateX(-39px);
     }
 

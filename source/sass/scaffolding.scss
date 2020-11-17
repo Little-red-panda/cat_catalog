@@ -26,6 +26,7 @@
 }
 
 html {
+    scroll-behavior: smooth;
     box-sizing: border-box;
 }
 *, *::before, *::after {
@@ -57,6 +58,32 @@ a {
     background-color: #fff;
 }
 
+.scroll {
+    position: fixed;
+    width: 59px;
+    height: 59px;
+    top: 85vh;
+    right: 50px;
+    background: url("../img/Vector-1.svg") no-repeat 20.5px 23.5px  #6EBBD3;
+    border: none;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #4ea8c4;
+    }
+    &:active {
+        opacity: 0.8;
+    }
+    &:focus {
+        background-color: #4ea8c4;
+        outline: none;
+    }  
+}
+
+.scroll--hidden {
+    display: none;
+}
+
 .visually-hidden:not(:focus):not(:active),
 input[type="checkbox"].visually-hidden,
 input[type="radio"].visually-hidden {
@@ -75,6 +102,29 @@ input[type="radio"].visually-hidden {
     overflow: hidden;
 }
 
+@keyframes shake {
+    0%,
+    100% {
+      transform: translate(0, -20px);
+    }
+  
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      transform: translate(-2px, -20px);
+    }
+  
+    20%,
+    40%,
+    60%,
+    80% {
+      transform: translate(2px, -20px);
+    }
+}
+
+
 @media (max-width: $tablet-width) {
     .container,
     .footer-container {
@@ -83,6 +133,10 @@ input[type="radio"].visually-hidden {
         padding-left: 30px;
     }
 
+    .scroll {
+        border-radius: 10px;
+        right: 50px;
+    }
 }
 
 @media (max-width: $mobile-width) {
@@ -95,6 +149,13 @@ input[type="radio"].visually-hidden {
     .footer-container {
         @include indents();
         width: 100%;
+    }
+
+    .scroll {
+        width: 49px;
+        height: 49px;
+        background-position: 15px 18px;
+        right: 20px;
     }
 }
 

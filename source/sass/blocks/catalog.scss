@@ -22,10 +22,14 @@
 
 .catalog__link-img {
     position: absolute;
-    &:hover {
-        transform: scale(1.005);
+    &:hover,
+    &:focus {
+        transform: scale(1.01);
+        outline: none;
     }
-
+    &:active {
+        transform: scale(1);
+    }
 }
 
 .catalog__wrapper {
@@ -37,7 +41,14 @@
 }
 
 .catalog__link-title {
+    display: block;
     color: #000;
+    &:focus {
+        opacity: 0.6;
+        transform: scale(1.05);
+        padding-left: 6px;
+        outline: none;
+    }
 }
 
 .catalog__title {
@@ -60,9 +71,6 @@
     display: grid;
     grid-template-columns: 131px 100px 89px;
     margin-bottom: 20px;
-
-    
-
 }
 
 .catalog__color {
@@ -85,14 +93,14 @@
     position: relative;
     @include indents();
     @include font(12px, 15px, 400);
-    padding-top: 18px;
+    padding-top: 19px;
 }
 
 .catalog__age-value {
     @include indents();
     @include font(16px, 20px, 700);
     position: absolute;
-    top: -2px;
+    top: 0px;
     left: 0;
 }
 
@@ -100,14 +108,14 @@
     position: relative;
     @include indents();
     @include font(12px, 15px, 400);
-    padding-top: 18px;
+    padding-top: 19px;
 }
 
 .catalog__paws-value {
     @include indents();
     @include font(16px, 20px, 700);
     position: absolute;
-    top: -2px;
+    top: 0px;
     left: 0;
 }
 
@@ -126,6 +134,7 @@
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     background-color: #6EBBD3;
+    transition: 0.1s;
 
     &--disabled {
         @include indents();
@@ -141,13 +150,14 @@
 
     &:hover {
         cursor: pointer;
-        background-color: #50acc7;
+        background-color: #4ea8c4;
+        @include font(18px, 65px, 700);
     }
     &:active {
         color: #cecece;
     }
     &:focus {
-        background-color: #50acc7;
+        background-color: #4ea8c4;
         outline: none;
     }
 }
@@ -185,28 +195,6 @@
 }
 
 
-.catalog__btn-scroll {
-    position: absolute;
-    width: 59px;
-    height: 59px;
-    top: 1225px;
-    right: 50px;
-    background: url("../img/Vector-1.svg") no-repeat 20.5px 23.5px  #6EBBD3;
-    
-    border: none;
-    &:hover {
-        cursor: pointer;
-        background-color: #50acc7;
-    }
-    &:active {
-        opacity: 0.8;
-    }
-    &:focus {
-        background-color: #50acc7;
-        outline: none;
-    }  
-}
-
 @media (max-width: $tablet-width) {
     .catalog__list {    
         grid-template-columns: 1fr 1fr;
@@ -240,14 +228,6 @@
         height: 65px;
 
         margin-bottom: 53px;
-    }
-     
-    .catalog__btn-scroll {
-        width: 59px;
-        height: 59px;
-        top: 1640px;
-        right: 30px;
-        border-radius: 10px;
     }
 }
 
@@ -334,14 +314,5 @@
         width: 280px;
         height: 55px;
         margin-bottom: 63px;
-    }  
-    
-    .catalog__btn-scroll {
-        width: 49px;
-        height: 49px;
-        top: 1225px;
-        right: 50px;
-        background: url("../img/Vector-1.svg") no-repeat 15px 18px  #6EBBD3;
-    }
-    
+    }     
 }
