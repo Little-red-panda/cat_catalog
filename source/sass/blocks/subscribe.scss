@@ -1,10 +1,8 @@
 .subscribe {
     display: flex;
     justify-content: space-between;
-    height: 312px;
     background: #1F2021;
-    padding: 0 80px;
-    margin-bottom: 114px;
+    padding: 0 80px 72px 80px;
 }
 
 .subscribe__title {
@@ -20,6 +18,7 @@
     @include font(28px, 26px, 400);
     color: #fff;
     width: 401px;
+    margin-bottom: 20px;
 }
 
 .subscribe__form {
@@ -41,8 +40,9 @@
 
     &:hover,
     &:focus {
-        background-color: #c0c0c0;
+        border: 2px solid #6EBBD3;
         outline: none;
+        padding-left: 34px;
     }
 }
 
@@ -52,7 +52,7 @@
     color: red;
     text-align: center;
     position: absolute;
-    top: 48px;
+    top: 40px;
     left: 0px;
     width: 300px;
 }
@@ -63,25 +63,15 @@
 
 .subscribe__email--error {
     box-shadow: 0 0 5px red;
-    transform: translateY(-20px);
     animation: shake 0.6s;
+    &:focus {
+        border: none;
+    }
 }
 
 .subscribe__email::placeholder {
     @include font(14px, 17px, 400);
     color: #000;
-    transition: 0.1s;
-}
-
-.subscribe__email:hover.subscribe__email::placeholder {
-    transform: scale(1.1);
-    padding-left: 10px;
-}
-
-.subscribe__email:active.subscribe__email::placeholder,
-.subscribe__email:focus.subscribe__email::placeholder {
-    transform: scale(1);
-    padding-left: 0px;
 }
 
 .subscribe__checkbox + label {
@@ -147,10 +137,10 @@
     &:hover {
         cursor: pointer;
         background-color: #4ea8c4;
-        @include font(16px, 65px, 700);
     }
     &:active {
         color: #cecece;
+        box-shadow: inset 0 0 15px #3b7e92;
     }
     &:focus {
         background-color: #4ea8c4;
@@ -160,9 +150,7 @@
 
 @media (max-width: $tablet-width) {
     .subscribe {
-        height: 226px;
-        padding: 0 40px;
-        margin-bottom: 60px;
+        padding: 0 40px 38px 40px;
     }
     
     .subscribe__title {
@@ -178,8 +166,7 @@
     
     .subscribe__form {
         position: relative;
-        margin-top: 48px;
-        margin-left: 43px;
+        margin: 48px 0 20px 43px;
     }
     
     .subscribe__email {
@@ -192,7 +179,7 @@
     }
 
     .subscribe__error {
-        top: 36px;
+        top: 32px;
         width: 260px;  
     }
 
@@ -210,16 +197,12 @@
         color: #fff;
         width: 260px;
         height: 55px;
-        &:hover {
-            @include font(16px, 55px, 700);
-        }
     }
 }
 
 @media (max-width: $mobile-width) {
     .subscribe {
         display: block;
-        height: auto;
         background: #1F2021;
         padding: 0 20px;
         margin-bottom: 0;
@@ -256,7 +239,7 @@
         margin-bottom: 12px;
     }
     .subscribe__error {
-        top: 36px;
+        top: 32px;
         width: 280px;  
     }
     

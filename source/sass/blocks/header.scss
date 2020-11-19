@@ -17,23 +17,23 @@
 }
 
 .main-header__logo-link {
-    &:hover,
     &:focus {
-        opacity: 0.6;
         outline: none;
     }
     &:active {
-        opacity: 0.3;
+        opacity: 0.8;
     } 
 }
 
 .main-header__logo-1 {
+    fill: #fff;
     position: absolute;
     top: 40px;
     transition: 0.2s;
 }
 
 .main-header__logo-2 {
+    fill: #fff;
     position: absolute;
     top: 40px;
     left: 64px;
@@ -42,11 +42,13 @@
 
 .main-header__logo-link:hover .main-header__logo-1,
 .main-header__logo-link:focus .main-header__logo-1 {
+    fill: #B71515;
     transform: translate(-1px, 1px);
 }
 
 .main-header__logo-link:hover .main-header__logo-2,
 .main-header__logo-link:focus .main-header__logo-2 {
+    fill: #B71515;
     transform: translate(1px, -1px);
 }
 
@@ -68,11 +70,11 @@
     margin-bottom: 3px;
     &:hover,
     &:focus {
-        opacity: 0.6;
+        color: #B71515;
         outline: none;
     }
     &:active {
-        opacity: 0.3;
+        opacity: 0.8;
     } 
 }
 

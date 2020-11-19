@@ -33,12 +33,12 @@
     &:hover,
     &:focus {
         cursor: pointer;
-        opacity: 0.6;
+        color: #B71515;
         transform: scale(1.1, 1.2);
         outline: none;
     }
     &:active {
-        opacity: 0.3;
+        opacity: 0.8;
     } 
 }
 
@@ -114,8 +114,8 @@
         &::after {
         content: "";
         position: absolute;
-        left: 0px;
-        top: -6px;
+        left: 26px;
+        top: 13px;
         width: 30px;
         height: 2px;
         background-color: #fff;
