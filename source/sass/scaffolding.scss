@@ -105,7 +105,7 @@ input[type="radio"].visually-hidden {
 @keyframes shake {
     0%,
     100% {
-      transform: translate(0, -20px);
+      transform: translate(0);
     }
   
     10%,
@@ -113,15 +113,24 @@ input[type="radio"].visually-hidden {
     50%,
     70%,
     90% {
-      transform: translate(-2px, -20px);
+      transform: translate(-2px);
     }
   
     20%,
     40%,
     60%,
     80% {
-      transform: translate(2px, -20px);
+      transform: translate(2px);
     }
+}
+
+@keyframes like {
+    0%  { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; transform: translateY(0px);}
+    99% { opacity: 0; transform: translateY(-15px);}
+    100% { opacity: 0; }
+    
 }
 
 
@@ -155,6 +164,8 @@ input[type="radio"].visually-hidden {
         width: 49px;
         height: 49px;
         background-position: 15px 18px;
+        top: auto;
+        bottom: 10vh;
         right: 20px;
     }
 }
