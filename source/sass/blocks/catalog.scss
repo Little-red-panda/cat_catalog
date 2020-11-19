@@ -24,12 +24,76 @@
     position: absolute;
     &:hover,
     &:focus {
-        transform: scale(1.01);
+        // transform: scale(1.006);
         outline: none;
     }
     &:active {
+        // transform: scale(1);
+    }
+}
+
+.catalog__sale {
+    @include indents();
+    @include font(16px, 39px, 400);
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    width: 78px;
+    height: 39px;
+    top: 34px;
+    left: 38px;
+    background-color: #E62D2D;
+    border-radius: 10px;
+    
+    display: none;
+}
+
+.catalog__like {
+    @include indents();
+    position: absolute;
+    width: 46px;
+    height: 41px;
+    top: 37px;
+    right: 32px;
+    border: none;
+    background-color: transparent;
+    & svg {
+        opacity: 0.5;
+    }
+    &:hover svg {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+    &:focus {
+        outline: none;
+    }
+    &:active svg {
         transform: scale(1);
     }
+}
+
+
+.catalog__notice {
+    @include indents();
+    @include font(16px, 20px, 700);
+    position: absolute;
+    top: -30px;
+    left: -245px;
+    width: 260px;
+    height: 20px;
+    color: #6EBBD3;
+    text-shadow: 0 0 3px #000;
+    display: none;
+}
+
+.catalog__like--active svg {
+    opacity: 1;
+}
+
+.catalog__like--notice .catalog__notice{
+    display: block;
+    opacity: 0;
+    animation: like 3s;
 }
 
 .catalog__wrapper {
@@ -45,8 +109,6 @@
     color: #000;
     &:focus {
         opacity: 0.6;
-        transform: scale(1.05);
-        padding-left: 6px;
         outline: none;
     }
 }
@@ -58,13 +120,53 @@
     transition: 0.1s;
     &:hover {
         opacity: 0.6;
-        transform: scale(1.05);
-        padding-left: 6px;
     }
     &:active {
         opacity: 0.3;
     }
 }
+
+.catalog__item--disabled {
+    &:hover {
+        box-shadow: none;
+    }
+    &:active {
+        box-shadow: none;
+    }
+}
+
+.catalog__item--disabled .catalog__link-img {
+    &:hover,
+    &:focus {
+        transform: none;
+        cursor: auto;
+    }
+    &:active {
+        transform: none;
+    }
+}
+
+.catalog__item--disabled .catalog__link-title {
+    &:focus {
+        opacity: 1;
+        outline: none;
+    }
+}
+
+.catalog__item--disabled .catalog__title {
+    &:hover {
+        opacity: 1;
+        cursor: auto;
+    }
+    &:active {
+        opacity: 1;
+    }
+}
+
+.catalog__item--sale .catalog__sale {
+    display: block;
+}
+
 
 .catalog__wrapper-info {
     @include indents();
@@ -151,10 +253,10 @@
     &:hover {
         cursor: pointer;
         background-color: #4ea8c4;
-        @include font(18px, 65px, 700);
     }
     &:active {
         color: #cecece;
+        box-shadow: inset 0 0 15px #4391a8;
     }
     &:focus {
         background-color: #4ea8c4;
@@ -181,16 +283,18 @@
 
     &:hover {
         cursor: pointer;
-        
-        transform: scale(1.1)
+        background-color: #6EBBD3;
+        border: 1px solid #4ea8c4;
+        color: #fff;
     }
     &:active {
-        color: #c0c0c0;
-        transform: scale(1.0)
+        box-shadow: inset 0 0 15px #4ea8c4;
     }
     &:focus {
         outline: none;
-        transform: scale(1.1)
+        background-color: #6EBBD3;
+        border: 1px solid #4ea8c4;
+        color: #fff;
     }
 }
 
@@ -206,6 +310,25 @@
     
     .catalog__link-img {
         width: 350px;
+    }
+
+    .catalog__sale {
+        @include font(15px, 34px, 400);
+        width: 68px;
+        height: 34px;
+        top: 28px;
+        left: 32px;
+    }
+    
+    .catalog__like {
+        top: 23px;
+        right: 26px;
+        transform: scale(0.9);
+    }
+
+    .catalog__notice {
+        top: -25px;
+        left: -250px;
     }
     
     .catalog__wrapper {
@@ -243,7 +366,28 @@
 
     .catalog__link-img {
         width: 280px;
+    }
+
+    .catalog__sale {
+        @include font(14px, 30px, 400);
+        width: 58px;
+        height: 30px;
+        top: 18px;
+        left: 20px;
+    }
     
+    .catalog__like {
+        top: 11px;
+        right: 12px;
+        transform: scale(0.8);
+    }
+
+    .catalog__notice {
+        @include font(15px, 20px, 700);
+        top: -19px;
+        left: -240px;
+        width: 260px;
+        height: 20px;
     }
 
     .catalog__wrapper {

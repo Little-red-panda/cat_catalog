@@ -27,39 +27,57 @@
 }
 
 .sort__item {
-    @include font(18px, 22px, 400);
     position: relative;
     padding-right: 84px;
 }
-.sort__item p {
-    @include indents();
-}
 
 .sort__button {
+    @include indents();
+    @include font(18px, 22px, 400);
+    text-align: start;
     position: absolute;
-    width: 30px;
-    height: 20px;
+    
+    height: 22px;
     border: none;
-    background: transparent url("../img/Vector.svg") no-repeat center;
+    background-color: transparent;
 
     &--price {
-        top: 2px;
-        left: 62px;
+        width: 79px;   
     }
 
     &--age {
-        top: 2px;
-        left: 108px;
+        width: 125px;
+        left: 55px;
     }
 
     &:hover,
     &:focus {
     cursor: pointer;
-    opacity: 0.6;
+    opacity: 0.7;
+    outline: none;
     }
     &:active {
-        opacity: 0.3;
+        opacity: 0.5;
     }
+
+    &:hover .sort__arrow-price,
+    &:hover .sort__arrow-age,
+    &:focus .sort__arrow-price,
+    &:focus .sort__arrow-age {
+        fill: #B71515;
+    }
+}
+
+.sort__arrow-age,
+.sort__arrow-price {
+    position: absolute;
+    right: 0;
+    top: 7px;
+}
+
+.sort__button--age-asc .sort__arrow-age,
+.sort__button--price-asc .sort__arrow-price {
+    transform: rotate(180deg);
 }
 
 @media (max-width: $tablet-width) {
@@ -76,22 +94,6 @@
         margin-bottom: 36px;
     }
 
-    .sort__button {
-        width: 40px;
-        height: 40px;
-        border: none;
-        background: transparent url("../img/Vector.svg") no-repeat center;
-    
-        &--price {
-            top: -8px;
-            left: 52px;
-        }
-    
-        &--age {
-            top: -8px;
-            left: 98px;
-        }
-    }
 }
 
 @media (max-width: $mobile-width) {
@@ -114,25 +116,16 @@
         margin-bottom: 8px;
     }
 
+    .sort__list {
+        margin-bottom: 20px; 
+    }
 
     .sort__item {
-        @include font(16px, 22px, 400);
-        width: 140px;
+        width: 100px;
         margin-bottom: 20px;
     }
     
     .sort__button {
-        width: 40px;
-        height: 40px;
-    
-        &--price {
-            top: -9px;
-            left: 50px;
-        }
-    
-        &--age {
-            top: -9px;
-            left: 88px;
-        }
+        @include font(16px, 22px, 400);
     }
 }
