@@ -6,4 +6,4 @@
 ```
 gulp build.
 ```
-Собранный проект на https://little-red-panda.github.io/show_for_Alef/ 
+Собранный проект на https://little-red-panda.github.io/show_cat_catalog/ 
