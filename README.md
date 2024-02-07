@@ -8,4 +8,4 @@
 gulp
 ```
 
-Собранный проект на https://little-red-panda.github.io/cat_catalog/
+Собранный проект [здесь](https://little-red-panda.github.io/cat_catalog/)
